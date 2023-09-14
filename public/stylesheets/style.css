@@ -16,12 +16,14 @@ a {
   border: none;
   width: 90px;
   height: 574px;
+  margin-top: 50px;
+  margin-right: 50px;
 }
 
 #loginScreen {
   position: absolute;
-  top: 45%;
-  transform: translate(90%,-50%);  
+  top: 38%;
+  transform: translate(80%,-50%);  
 }
 
 #googleImg {
@@ -61,6 +63,7 @@ h2 {
 
 /* Style the tab content */
 .tabcontent {
+  margin-top: 50px;
   float: right;
   padding: 0px 5px;
   border: 1px solid #ccc;

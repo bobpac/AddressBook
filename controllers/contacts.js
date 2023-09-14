@@ -1,12 +1,20 @@
 const Contact = require('../models/contact');
+const { getActivePage } = require('../public/javascripts/main.js');
 
 module.exports = {
   index,
 };
 
 async function index(req, res) {
-  const contacts = await Contact.find({});
-  res.render('contacts/index', { title: 'All Contacts', contacts });
+  console.log(getActivePage())
+
+  if ( req.user ) {
+    const contacts = await Contact.find({});
+    res.render('contacts/index', { title: 'Show Contacts', contacts });
+  } else {
+    res.render('contacts/index', { title: 'Welcome to Address Book!' });
+  }
+  
 }
 
 async function show(req, res) {

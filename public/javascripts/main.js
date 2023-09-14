@@ -1,5 +1,15 @@
+let activePage = undefined;
+
+function getActivePage() {
+  return activePage ;
+}
+
+module.exports = { getActivePage };
+
 function openPage(evt, pageName) {
-  var i, tabcontent, tablinks;
+
+  let i, tabcontent, tablinks;
+  activePage = pageName;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
