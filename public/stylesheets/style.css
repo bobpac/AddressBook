@@ -17,7 +17,21 @@ a {
   width: 90px;
   height: 574px;
 }
-.h1 {
+
+#loginScreen {
+  position: absolute;
+  top: 45%;
+  transform: translate(90%,-50%);  
+}
+
+#googleImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+}
+
+h2 {
   text-align: center;
 }
 /* Style the buttons inside the tab */
@@ -52,8 +66,8 @@ a {
   border: 1px solid #ccc;
   width: 85%;
   min-width: 500px;
-  max-width: 600px;
+  max-width: 500px;
   border-right: none;
-  height: 574px;
+  height: 572px;
   Overflow-y:scroll;
 }

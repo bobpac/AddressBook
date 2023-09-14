@@ -2,104 +2,123 @@
 <h2>Address Book</h2>
 
 <div class="tab">
-  <button class="greenTab"  class="tablinks" onclick="openPage(event, 'Login')" id="defaultOpen">Login</button>
+  <button                   class="tablinks" onclick="openPage(event, 'Login')" id="defaultOpen">Login</button>
   <button class="blueTab"   class="tablinks" onclick="openPage(event, 'AB')">  A,B   </button>
   <button class="pinkTab"   class="tablinks" onclick="openPage(event, 'CD')">  C,D   </button>
   <button class="yellowTab" class="tablinks" onclick="openPage(event, 'EF')">  E,F   </button>
   <button class="redTab"    class="tablinks" onclick="openPage(event, 'GH')">  G,H   </button>
   <button class="purpleTab" class="tablinks" onclick="openPage(event, 'IJ')">  I,J   </button>
-  <button                   class="tablinks" onclick="openPage(event, 'KL')">  K,L   </button>
-  <button                   class="tablinks" onclick="openPage(event, 'MN')">  M,N   </button>
-  <button                   class="tablinks" onclick="openPage(event, 'OP')">  O,P   </button>
-  <button                   class="tablinks" onclick="openPage(event, 'QRS')"> Q,R,S </button>
-  <button                   class="tablinks" onclick="openPage(event, 'TU')">  T,U   </button>  
-  <button                   class="tablinks" onclick="openPage(event, 'VW')">  V,W   </button>
-  <button                   class="tablinks" onclick="openPage(event, 'XYZ')"> X,Y,Z </button>
+  <button class="greenTab"  class="tablinks" onclick="openPage(event, 'KL')">  K,L   </button>
+  <button class="blueTab"   class="tablinks" onclick="openPage(event, 'MN')">  M,N   </button>
+  <button class="pinkTab"   class="tablinks" onclick="openPage(event, 'OP')">  O,P   </button>
+  <button class="yellowTab" class="tablinks" onclick="openPage(event, 'QRS')"> Q,R,S </button>
+  <button class="redTab"    class="tablinks" onclick="openPage(event, 'TU')">  T,U   </button>  
+  <button class="purpleTab" class="tablinks" onclick="openPage(event, 'VW')">  V,W   </button>
+  <button class="greenTab"  class="tablinks" onclick="openPage(event, 'XYZ')"> X,Y,Z </button>
 </div>
 
 <div id="Login" class="tabcontent">
-  <h3>Login</h3>
-  <p></p>
+  <% if (!user) { %>
+    <%- include('../partials/login') %>
+  <% } else { %>
+    <script> </script>
+    <p></p>
+  <% } %>
 </div>
   
 <div id="AB" class="tabcontent">
-  <h3>A and B</h3>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-<p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
+  <% if (!user) { %>
+    <%- include('../partials/login') %>
+  <% } else { %>
+    <p></p>
+  <% } %>
 </div>
 
 <div id="CD" class="tabcontent">
-  <h3>C and D</h3>
-  <p></p> 
+  <% if (!user) { %>
+    <%- include('../partials/login') %>
+  <% } else { %>
+    <p></p>
+  <% } %>
 </div>
 
 <div id="EF" class="tabcontent">
-  <h3>E and F</h3>
-  <p></p>
+  <% if (!user) { %>
+    <%- include('../partials/login') %>
+  <% } else { %>
+    <p></p>
+  <% } %>
 </div>
   
 <div id="GH" class="tabcontent">
-  <h3>G and H</h3>
-  <p></p>
-</div>
+  <% if (!user) { %>
+    <%- include('../partials/login') %>
+  <% } else { %>
+    <p></p>
+  <% } %>
+  </div>
   
 <div id="IJ" class="tabcontent">
-  <h3>I and J</h3>
-  <p></p>
-</div>
+  <% if (!user) { %>
+    <%- include('../partials/login') %>
+  <% } else { %>
+    <p></p>
+  <% } %>
+  </div>
 
 <div id="KL" class="tabcontent">
-  <h3>K and L</h3>
-  <p></p>
+  <% if (!user) { %>
+    <%- include('../partials/login') %>
+  <% } else { %>
+    <p></p>
+  <% } %>
 </div>
   
 <div id="MN" class="tabcontent">
-  <h3>M and N</h3>
-  <p></p>
+  <% if (!user) { %>
+    <%- include('../partials/login') %>
+  <% } else { %>
+    <p></p>
+  <% } %>
 </div>
 
 <div id="OP" class="tabcontent">
-  <h3>O and P</h3>
-  <p></p>
+  <% if (!user) { %>
+    <%- include('../partials/login') %>
+  <% } else { %>
+    <p></p>
+  <% } %>
 </div>
 
 <div id="QRS" class="tabcontent">
-  <h3>Q, R, and S</h3>
-  <p></p>
+  <% if (!user) { %>
+    <%- include('../partials/login') %>
+  <% } else { %>
+    <p></p>
+  <% } %>
 </div>
 
 <div id="TU" class="tabcontent">
-  <h3>T and U</h3>
-  <p></p>
+  <% if (!user) { %>
+    <%- include('../partials/login') %>
+  <% } else { %>
+    <p></p>
+  <% } %>
 </div>
 
 <div id="VW" class="tabcontent">
-  <h3>V and W</h3>
-  <p></p>
+  <% if (!user) { %>
+    <%- include('../partials/login') %>
+  <% } else { %>
+    <p></p>
+  <% } %>
 </div>
 
 <div id="XYZ" class="tabcontent">
-  <h3>X, Y, and Z</h3>
-  <p></p>
+  <% if (!user) { %>
+    <%- include('../partials/login') %>
+  <% } else { %>
+    <p></p>
+  <% } %>
 </div>
 <%- include('../partials/footer') %>
