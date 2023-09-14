@@ -1,15 +1,11 @@
-let activePage = undefined;
-
-function getActivePage() {
-  return activePage ;
-}
-
-module.exports = { getActivePage };
+let activePagename;
 
 function openPage(evt, pageName) {
 
+  activePagename = pageName;
+  console.log("openPage: activePagename = " + activePagename)
+
   let i, tabcontent, tablinks;
-  activePage = pageName;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
