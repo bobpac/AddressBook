@@ -6,15 +6,14 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 // GET /contacts
 router.get('/', contactsCtrl.index)
-router.post('/:id', contactsCtrl.getContact);
-
-
+router.post('/:id', contactsCtrl.getContacts);
+router.post('/', contactsCtrl.create);
 
 // GET /contacts/new
-// router.get('/new', ensureLoggedIn, contactsCtrl.new);
+router.get('/new', contactsCtrl.new);
 
 // GET /contacts/:id (show functionality) MUST be below new route
-// router.get('/:id', contactsCtrl.show);
+router.get('/:id', contactsCtrl.show);
 
 // POST /contacts
 // router.post('/', ensureLoggedIn, contactsCtrl.create);

@@ -1,4 +1,100 @@
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: #424748;
+}
+
 body {
+  background-color: Linen;
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: 
+    "nav"
+    "main"
+}
+
+body > nav {
+  grid-area: nav;
+  background-color: DeepSkyBlue;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+img {
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
+body > main {
+  /* grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E8ECEB;
+  padding: 20px;
+  overflow-y: scroll; */
+}
+
+body > main h1:first-child {
+  /* margin-bottom: 50px; */
+}
+
+#new-form {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.prompt {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid;
+}
+.prompt-label {
+  margin-left: 50px;
+}
+
+.prompt-submit {
+  size: "20";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* body {
   font-family: "Lato", sans-serif;
 }
 
@@ -8,7 +104,7 @@ body {
 
 a {
   color: #00B7FF;
-}
+} */
 
 /* Style the tab container */
 .tab-container {
@@ -49,9 +145,10 @@ a {
   border-right: none;
   height: 565px;
   Overflow-y:scroll;
+  background-color: white;
 }
 
-#loginScreen {
+/* #loginScreen {
   position: absolute;
   top: 38%;
   transform: translate(30%,-30%);  
@@ -62,7 +159,7 @@ a {
   align-items: center;
   justify-content: center;
   height: 120px;
-}
+} */
 
 h2 {
   text-align: center;

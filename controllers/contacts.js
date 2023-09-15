@@ -2,34 +2,40 @@ const Contact = require('../models/contact');
 
 module.exports = {
   index,
-  getContact
+  new: newContact,
+  getContacts,
+  create,
+  show
 };
 
 async function index(req, res, next) {
   res.render('contacts/index', { title: 'Welcome to Address Book!' });
 }
 
-async function getContact(req, res, next) {
-  console.log(`In index`, req.params);
+async function newContact(req, res, next) {
+  res.render('contacts/new', { title: 'Create New Contact' });
+}
 
+async function getContacts(req, res, next) {
+  console.log(`In getContacts`, req.params);
+
+  /* Find all users that begin with the letters given to us */
+  let regexp = new RegExp("[^" + req.params.id + "]")
+  console.log(regexp)
   if ( req.user ) {
-    const contacts = await Contact.find({firstName: req.params.id});
+    const contacts = await Contact.find({firstName: regexp});
+    console.log(contacts)
     res.render('contacts/index', { title: 'Show Contacts', contacts });
   } else {
     res.render('contacts/index', { title: 'Welcome to Address Book!' });
   }
 }
 
-// async function show(req, res) {
-//   // Populate the cast array with performer docs instead of ObjectIds
-//   const movie = await Movie.findById(req.params.id).populate('cast');
-//   // Mongoose query builder approach to retrieve performers not the movie:
-//     // Performer.find({}).where('_id').nin(movie.cast)
-//   // The native MongoDB approach uses a query object to find
-//   // performer docs whose _ids are not in the movie.cast array like this:
-//   const performers = await Performer.find({ _id: { $nin: movie.cast } }).sort('name');
-//   res.render('movies/show', { title: 'Movie Detail', movie, performers });
-// }
+async function show(req, res) {
+  const contact = await Contact.findById(req.params.id);
+
+  res.render('contacts/show', { title: 'Show Contact', contact });
+}
 
 // function newMovie(req, res) {
 //   // We'll want to be able to render an
@@ -37,21 +43,20 @@ async function getContact(req, res, next) {
 //   res.render('movies/new', { title: 'Add Movie', errorMsg: '' });
 // }
 
-// async function create(req, res) {
-//   // convert nowShowing's checkbox of nothing or "on" to boolean
-//   req.body.nowShowing = !!req.body.nowShowing;
-//   // Remove empty properties so that defaults will be applied
-//   for (let key in req.body) {
-//     if (req.body[key] === '') delete req.body[key];
-//   }
-//   try {
-//     // Update this line because now we need the _id of the new movie
-//     const movie = await Movie.create(req.body);
-//     // Redirect to the new movie's show functionality
-//     res.redirect(`/movies/${movie._id}`);
-//   } catch (err) {
-//     // Typically some sort of validation error
-//     console.log(err);
-//     res.render('movies/new', { errorMsg: err.message });
-//   }
-// }
+async function create(req, res) {
+  console.log(req.body)
+  req.body.zipCode = parseInt(req.body.zipCode)  
+  console.log(req.body)
+  try {
+    // Update this line because now we need the _id of the new movie
+    const contact = await Contact.create(req.body);
+
+    // Redirect to the new movie's show functionality
+    res.redirect(`/contacts/${contact._id}`);
+
+  } catch (err) {
+    // Typically some sort of validation error
+    console.log(err);
+    res.render('contacts/new', { errorMsg: err.message });
+  }
+}
