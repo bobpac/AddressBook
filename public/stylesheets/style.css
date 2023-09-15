@@ -10,20 +10,51 @@ a {
   color: #00B7FF;
 }
 
-/* Style the tab */
-.tab {
+/* Style the tab container */
+.tab-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   float: right;
   border: none;
-  width: 90px;
-  height: 574px;
-  margin-top: 50px;
   margin-right: 50px;
+  margin-top: 50px;
+  background-clip: content-box;
+  flex-basis: auto;
+  box-sizing: content-box;
+  width: 50px;
+  height: 565px;
+}
+
+/* Style the buttons inside the tab */
+.tab-button {
+  height: 40px;
+  width: 60px;
+  border-top-right-radius: 50%;
+  /* background-clip: border-box; */
+  /* flex-grow: 15; */
+  flex-basis: 51px;
+  /* box-sizing: content-box; */
+  /* flex: 10; */
+}
+
+/* Style the tab content */
+.tabcontent {
+  margin-top: 50px;
+  float: right;
+  padding: 0px 5px;
+  border: 1px solid #ccc;
+  width: 500px;
+  border-right: none;
+  height: 565px;
+  Overflow-y:scroll;
 }
 
 #loginScreen {
   position: absolute;
   top: 38%;
-  transform: translate(80%,-50%);  
+  transform: translate(30%,-30%);  
 }
 
 #googleImg {
@@ -35,42 +66,4 @@ a {
 
 h2 {
   text-align: center;
-}
-/* Style the buttons inside the tab */
-.tab button {
-  display: block;
-  color: black;
-  padding: 12px 12px;
-  width: 100%;
-  border: none;
-  border-radius: 0px 20px 20px 0px;
-  outline: none;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: 17px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current "tab button" class */
-.tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  margin-top: 50px;
-  float: right;
-  padding: 0px 5px;
-  border: 1px solid #ccc;
-  width: 85%;
-  min-width: 500px;
-  max-width: 500px;
-  border-right: none;
-  height: 572px;
-  Overflow-y:scroll;
 }

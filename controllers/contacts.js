@@ -2,13 +2,18 @@ const Contact = require('../models/contact');
 
 module.exports = {
   index,
+  getContact
 };
 
-async function index(req, res) {
-  console.log(`In index`, req.body);
+async function index(req, res, next) {
+  res.render('contacts/index', { title: 'Welcome to Address Book!' });
+}
+
+async function getContact(req, res, next) {
+  console.log(`In index`, req.params);
 
   if ( req.user ) {
-    const contacts = await Contact.find({});
+    const contacts = await Contact.find({firstName: req.params.id});
     res.render('contacts/index', { title: 'Show Contacts', contacts });
   } else {
     res.render('contacts/index', { title: 'Welcome to Address Book!' });

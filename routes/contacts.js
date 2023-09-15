@@ -5,7 +5,8 @@ const contactsCtrl = require('../controllers/contacts');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 // GET /contacts
-router.post('/', contactsCtrl.index );
+router.get('/', contactsCtrl.index)
+router.post('/:id', contactsCtrl.getContact);
 
 
 
