@@ -3,20 +3,23 @@
 <%- include('../partials/main') %>
 
 <div class="tabcontent">
-
+  <h2> <%= title %> </h2>
+  <div id="new-form">
+  <table>
+    <tr> <td class="heading"> First Name </td> <td><input class="prompt" type="text" name="firstName"> </td></tr>
+    <tr> <td class="heading"> Last Name  </td> <td><input class="prompt" type="text" name="lastName">  </td></tr>
+    <tr> <td class="heading"> Address1   </td> <td><input class="prompt" type="text" name="address1">  </td></tr>
+    <tr> <td class="heading"> Address2   </td> <td><input class="prompt" type="text" name="address2">  </td></tr>
+    <tr> <td class="heading"> City       </td> <td><input class="prompt" type="text" name="city">      </td></tr>
+    <tr> <td class="heading"> State      </td> <td><input class="prompt" type="text" name="state">     </td></tr>
+    <tr> <td class="heading"> Zip Code   </td> <td><input class="prompt" type="text" name="zipCode">   </td></tr>
+    <tr> <td class="heading"> Email      </td> <td><input class="prompt" type="text" name="email">     </td></tr>
+    <tr> <td class="heading"> Phone      </td> <td><input class="prompt" type="text" name="phone" 
+                    pattern="\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$"> </td></tr> 
+  </table>
 <form id="new-form" action="/contacts" method="POST">
-  <label class="prompt-label">First Name:  <input class="prompt" type="text" name="firstName">  </label><br>
-  <label class="prompt-label">Last Name:   <input class="prompt" type="text" name="lastName">   </label><br>
-  <label class="prompt-label">Address1:    <input class="prompt" type="text" name="address1">   </label><br>
-  <label class="prompt-label">Address2:    <input class="prompt" type="text" name="address2">   </label><br>
-  <label class="prompt-label">City:        <input class="prompt" type="text" name="city">       </label><br>
-  <label class="prompt-label">State:       <input class="prompt" type="text" name="state">      </label><br>
-  <label class="prompt-label">Zip Code:    <input class="prompt" type="text" name="zipCode">    </label><br>
-  <label class="prompt-label">Email:       <input class="prompt" type="text" name="email">      </label><br>
-  <label class="prompt-label">Phone:       <input class="prompt" type="text" name="phone">      </label><br>
   <input class="prompt-submit" type="submit" value="Add Contact" size="20" maxlength="9">
 </form>
-
 </div>
 
 <%- include('../partials/footer') %>

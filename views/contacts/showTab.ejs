@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+<%- include('../partials/main') %>
+
+<div class="tabcontent">
+  <h2> <%= title %> </h2>
+  <table>
+    <% contacts.forEach(function(c) { %>
+    <tr> 
+      <td> 
+        <a href="/contacts/<%= c._id %>"> <%= c.firstName %> <%= c.lastName %>  </a>
+      </td>
+    </tr>
+    <% }); %>
+  </table>
+</div>
+
+<%- include('../partials/footer') %>

@@ -37,13 +37,7 @@ img {
 }
 
 body > main {
-  /* grid-area: main;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #E8ECEB;
-  padding: 20px;
-  overflow-y: scroll; */
+  overflow-y: scroll;
 }
 
 body > main h1:first-child {
@@ -55,7 +49,7 @@ body > main h1:first-child {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
+  align-items: center;
 }
 
 .prompt {
@@ -63,17 +57,28 @@ body > main h1:first-child {
   border-left: none;
   border-right: none;
   border-bottom: solid;
+  size: 60;
 }
 .prompt-label {
   margin-left: 50px;
+  font-weight: bold;
 }
 
 .prompt-submit {
   size: "20";
 }
 
+table {
+  padding-left: 20px;
+}
 
+td {
+  padding-left: 20px;
+}
 
+.heading {
+  font-weight: bold;
+}
 
 
 
