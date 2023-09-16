@@ -36,16 +36,20 @@ img {
   margin-right: auto;
 }
 
+.add {
+  background-color: lawngreen;
+}
+
+.delete {
+  background-color: lightcoral;
+}
+
 body > main {
   overflow-y: scroll;
 }
 
-body > main h1:first-child {
-  /* margin-bottom: 50px; */
-}
-
 #new-form {
-  margin-top: 100px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,6 +69,7 @@ body > main h1:first-child {
 }
 
 .prompt-submit {
+  margin-top: 20px;
   size: "20";
 }
 
@@ -79,37 +84,6 @@ td {
 .heading {
   font-weight: bold;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* body {
-  font-family: "Lato", sans-serif;
-}
-
-* {
-  box-sizing: border-box
-}
-
-a {
-  color: #00B7FF;
-} */
 
 /* Style the tab container */
 .tab-container {
@@ -133,18 +107,16 @@ a {
   height: 40px;
   width: 60px;
   border-top-right-radius: 50%;
-  /* background-clip: border-box; */
-  /* flex-grow: 15; */
   flex-basis: 51px;
-  /* box-sizing: content-box; */
-  /* flex: 10; */
 }
 
 /* Style the tab content */
 .tabcontent {
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 40px;
   float: right;
-  padding: 0px 5px;
+  padding-top: 0px;
+  padding-bottom: 50px;
   border: 1px solid #ccc;
   width: 500px;
   border-right: none;
@@ -152,19 +124,6 @@ a {
   Overflow-y:scroll;
   background-color: white;
 }
-
-/* #loginScreen {
-  position: absolute;
-  top: 38%;
-  transform: translate(30%,-30%);  
-}
-
-#googleImg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 120px;
-} */
 
 h2 {
   text-align: center;

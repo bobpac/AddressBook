@@ -47,6 +47,8 @@ app.use(function (req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/contacts', contactsRouter);
+app.use('/', notesRouter);
+
 // Mount these routers to root because not all
 // paths for a related/nested resource begin the same
 // app.use('/'reviewsRouter);

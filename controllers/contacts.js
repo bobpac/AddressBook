@@ -51,11 +51,12 @@ async function create(req, res) {
     // Update this line because now we need the _id of the new movie
     const contact = await Contact.create(req.body);
 
-    res.render(`/contacts/${contact._id}`, { title: 'Show Contact' });
+    res.redirect(`/contacts/${contact._id}`);
 
   } catch (err) {
     // Typically some sort of validation error
     console.log(err);
-    res.render('contacts/new', { errorMsg: err.message , title: 'Error' });
+    res.render('/contacts/new', { errorMsg: err.message , title: 'Error' });
   }
 }
+

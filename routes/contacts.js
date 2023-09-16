@@ -6,7 +6,11 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 // GET /contacts
 router.get('/', contactsCtrl.index)
+
+// POST /contacts/:id
 router.post('/:id', contactsCtrl.getContacts);
+
+// POST /contacts
 router.post('/', contactsCtrl.create);
 
 // GET /contacts/new
@@ -14,8 +18,5 @@ router.get('/new', contactsCtrl.new);
 
 // GET /contacts/:id (show functionality) MUST be below new route
 router.get('/:id', contactsCtrl.show);
-
-// POST /contacts
-// router.post('/', ensureLoggedIn, contactsCtrl.create);
 
 module.exports = router;
