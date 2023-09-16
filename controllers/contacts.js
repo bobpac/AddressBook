@@ -17,13 +17,11 @@ async function newContact(req, res, next) {
 }
 
 async function getContacts(req, res, next) {
-  console.log(`In getContacts`, req.params);
-
   /* Find all users that begin with the letters given to us */
   let regexp = new RegExp("^[" + req.params.id + "]")
   console.log(regexp)
   if ( req.user ) {
-    const contacts = await Contact.find({firstName: regexp});
+    const contacts = await Contact.find({firstName: regexp}).sort({firstName: 1});
     console.log(contacts)
     res.render('contacts/showTab', { title: 'Show Contacts (\'' + req.params.id + '\')', contacts });
   } else {
