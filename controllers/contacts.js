@@ -13,16 +13,20 @@ async function index(req, res, next) {
 }
 
 async function newContact(req, res, next) {
-  res.render('contacts/new', { title: 'Create New Contact' });
+  const states = [ "--", 
+                   "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL",
+                   "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME",
+                   "MD", "MA", "MI", "MN", "MO", "MT", "NE", "NV", "NH", "NJ", 
+                   "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", 
+                   "SC", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY" ];
+  res.render('contacts/new', { title: 'Create New Contact' ,states});
 }
 
 async function getContacts(req, res, next) {
   /* Find all users that begin with the letters given to us */
-  let regexp = new RegExp("^[" + req.params.id + "]")
-  console.log(regexp)
+  let regexp = new RegExp("^[" + req.params.id + "]","i")
   if ( req.user ) {
     const contacts = await Contact.find({firstName: regexp}).sort({firstName: 1});
-    console.log(contacts)
     res.render('contacts/showTab', { title: 'Show Contacts (\'' + req.params.id + '\')', contacts });
   } else {
     res.render('contacts/index', { title: 'Welcome to Address Book!' });

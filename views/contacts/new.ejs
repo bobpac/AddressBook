@@ -7,15 +7,27 @@
   <div>
     <form id="new-form" action="/contacts" method="POST">
       <table>
-        <tr> <td class="heading"> First Name </td> <td><input class="prompt" type="text" name="firstName"> </td></tr>
-        <tr> <td class="heading"> Last Name  </td> <td><input class="prompt" type="text" name="lastName">  </td></tr>
-        <tr> <td class="heading"> Address1   </td> <td><input class="prompt" type="text" name="address1">  </td></tr>
-        <tr> <td class="heading"> Address2   </td> <td><input class="prompt" type="text" name="address2">  </td></tr>
-        <tr> <td class="heading"> City       </td> <td><input class="prompt" type="text" name="city">      </td></tr>
-        <tr> <td class="heading"> State      </td> <td><input class="prompt" type="text" name="state">     </td></tr>
-        <tr> <td class="heading"> Zip Code   </td> <td><input class="prompt" type="text" name="zipCode">   </td></tr>
+        <tr> <td class="heading"> First Name </td> <td><input class="prompt" type="text" name="firstName" required="true" > </td></tr>
+        <tr> <td class="heading"> Last Name  </td> <td><input class="prompt" type="text" name="lastName"  required="true" > </td></tr>
+        <tr> <td class="heading"> Address1   </td> <td><input class="prompt" type="text" name="address1"  required="true" > </td></tr>
+        <tr> <td class="heading"> Address2   </td> <td><input class="prompt" type="text" name="address2"                  > </td></tr>
+        <tr> <td class="heading"> City       </td> <td><input class="prompt" type="text" name="city"      required="true" > </td></tr>
+        <tr> <td class="heading"> State      </td>
+            <td>
+              <select name="state">
+                <% states.forEach(function(s) { %>  
+                  <option value="<%= s %>"> <%= s %></option>
+                <% }); %>   
+              </select>
+            </td>
+        </tr> 
+        <tr> <td class="heading"> Zip Code   </td> 
+             <td><input class="prompt" type="text" name="zipCode" pattern="\d{5}" title="Format: 01234 (5 digits)">   </td></tr>
         <tr> <td class="heading"> Email      </td> <td><input class="prompt" type="text" name="email">     </td></tr>
-        <tr> <td class="heading"> Phone      </td> <td><input class="prompt" type="text" name="phone">     </td></tr> 
+        <tr> <td class="heading"> Phone      </td> 
+             <td><input class="prompt" type="text" name="phone" 
+                        pattern="\d{3}-\d{3}-\d{4}" title="Format: 123-456-7890"
+                        placeholder="Format: 123-456-7890">  </td></tr> 
       </table>
       <input class="prompt-submit" type="submit" value="Add Contact" size="20" maxlength="9">
     </form>
