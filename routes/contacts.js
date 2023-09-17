@@ -19,4 +19,13 @@ router.get('/new', contactsCtrl.new);
 // GET /contacts/:id (show functionality) MUST be below new route
 router.get('/:id', contactsCtrl.show);
 
+// DELETE /contacts/:id
+router.delete('/:id', contactsCtrl.delete);
+
+// GET /contacts/:id/edit
+router.get('/:id/edit', contactsCtrl.edit);
+
+// PUT /contacts/:id
+router.put('/:id', contactsCtrl.update);
+
 module.exports = router;

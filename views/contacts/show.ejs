@@ -27,9 +27,15 @@
       <tr> <td class="heading"> <input class="add"    type="submit" value="Add Note">  </td> 
            <td>                 <input class="prompt" type="text"    name="note">      </td></tr>
     </form>     
-    </form>  
   </table>
-  </form>
+  <div id="new-form">
+    <form action="/contacts/<%= contact._id %>/edit" method="GET">
+      <input class="edit" type="submit" size=30 value="Edit Contact">
+    </form>
+    <form action="/contacts/<%= contact._id %>?_method=DELETE" method="POST">
+      <input class="delete" type="submit" value="Delete Contact">
+    </form>
+  </div>
   </div>
 </div 
 <%- include('../partials/footer') %>

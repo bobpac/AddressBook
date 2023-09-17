@@ -5,21 +5,30 @@ module.exports = {
   new: newContact,
   getContacts,
   create,
-  show
+  show,
+  delete: deleteContact,
+  edit,
+  update
 };
+
+const states = [ "--", 
+"AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL",
+"GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME",
+"MD", "MA", "MI", "MN", "MO", "MT", "NE", "NV", "NH", "NJ", 
+"NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", 
+"SC", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY" ];
 
 async function index(req, res, next) {
   res.render('contacts/index', { title: 'Welcome to Address Book!' });
 }
 
 async function newContact(req, res, next) {
-  const states = [ "--", 
-                   "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL",
-                   "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME",
-                   "MD", "MA", "MI", "MN", "MO", "MT", "NE", "NV", "NH", "NJ", 
-                   "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", 
-                   "SC", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY" ];
   res.render('contacts/new', { title: 'Create New Contact' ,states});
+}
+
+async function edit(req, res, next) {
+  const contact = await Contact.findById(req.params.id);
+  res.render('contacts/edit', { title: 'Edit Contact' ,states, contact});
 }
 
 async function getContacts(req, res, next) {
@@ -62,3 +71,45 @@ async function create(req, res) {
   }
 }
 
+async function deleteContact(req, res) {
+  console.log(req.params)
+  console.log(req.body)
+  try {
+    const contact = await Contact.findByIdAndRemove(req.params.id);
+    res.redirect(`/contacts`);
+  } catch (err) {
+    // Typically some sort of validation error
+    console.log(err);
+  }
+}
+
+async function update(req, res) {
+  console.log(req.params.id);
+  console.log(req.body)
+  req.body.zipCode = parseInt(req.body.zipCode)  
+  console.log(req.body)
+
+  const contact = await Contact.findById(req.params.id);
+
+  contact.firstName = req.body.firstName;
+  contact.lastName  = req.body.lastName;
+  contact.address1  = req.body.address1;
+  contact.address2  = req.body.address2;
+  contact.city      = req.body.city;
+  contact.state     = req.body.state;
+  contact.zipCode   = req.body.zipCode;
+  contact.email     = req.body.email;
+  contact.phone     = req.body.phone;
+
+  try {
+
+    await contact.save();
+    res.redirect(`/contacts/${contact._id}`);
+
+  } catch (err) {
+
+    console.log(err);
+    res.redirect(`/contacts/${contact._id}/edit`);
+    
+  }
+}
