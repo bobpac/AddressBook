@@ -18,6 +18,10 @@ const states = [ "--",
 "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", 
 "SC", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY" ];
 
+const tabs = [ "AB",  "CD",  "EF",  "GH", 
+               "IJ",  "KL",  "MN",  "OP", 
+               "QRS", "TU",  "VW",  "XYZ"];
+
 async function index(req, res, next) {
   res.render('contacts/index', { title: 'Welcome to Address Book!' });
 }
@@ -44,26 +48,15 @@ async function getContacts(req, res, next) {
 
 async function show(req, res) {
   const contact = await Contact.findById(req.params.id);
-
   res.render('contacts/show', { title: 'Show Contact', contact });
 }
 
-// function newMovie(req, res) {
-//   // We'll want to be able to render an
-//   // errorMsg if the create action fails
-//   res.render('movies/new', { title: 'Add Movie', errorMsg: '' });
-// }
-
 async function create(req, res) {
-  console.log(req.body)
   req.body.zipCode = parseInt(req.body.zipCode)  
-  console.log(req.body)
   try {
     // Update this line because now we need the _id of the new movie
     const contact = await Contact.create(req.body);
-
     res.redirect(`/contacts/${contact._id}`);
-
   } catch (err) {
     // Typically some sort of validation error
     console.log(err);
@@ -72,11 +65,23 @@ async function create(req, res) {
 }
 
 async function deleteContact(req, res) {
-  console.log(req.params)
-  console.log(req.body)
   try {
     const contact = await Contact.findByIdAndRemove(req.params.id);
-    res.redirect(`/contacts`);
+    firstLetter = contact.firstName.charAt(0).toUpperCase();
+    let foundTab = -1;
+    tabs.forEach((element) => {
+      const index = element.indexOf(firstLetter, true);
+      if ( index >= 0 ) {
+        foundTab = element;
+      }
+    })
+    if ( foundTab === -1 ) {
+      res.render('contacts/index', { title: 'Welcome to Address Book!' });
+    } else {
+      let regexp = new RegExp("^[" + foundTab + "]","i")
+      const contacts = await Contact.find({firstName: regexp}).sort({firstName: 1});
+      res.render('contacts/showTab', { title: 'Show Contacts (\'' + foundTab + '\')', contacts });
+    }
   } catch (err) {
     // Typically some sort of validation error
     console.log(err);
@@ -84,13 +89,10 @@ async function deleteContact(req, res) {
 }
 
 async function update(req, res) {
-  console.log(req.params.id);
-  console.log(req.body)
+
   req.body.zipCode = parseInt(req.body.zipCode)  
-  console.log(req.body)
 
   const contact = await Contact.findById(req.params.id);
-
   contact.firstName = req.body.firstName;
   contact.lastName  = req.body.lastName;
   contact.address1  = req.body.address1;
@@ -102,14 +104,10 @@ async function update(req, res) {
   contact.phone     = req.body.phone;
 
   try {
-
     await contact.save();
     res.redirect(`/contacts/${contact._id}`);
-
   } catch (err) {
-
     console.log(err);
     res.redirect(`/contacts/${contact._id}/edit`);
-    
   }
 }
