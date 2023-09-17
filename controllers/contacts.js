@@ -60,7 +60,6 @@ async function create(req, res) {
   } catch (err) {
     // Typically some sort of validation error
     console.log(err);
-    res.render('/contacts/new', { errorMsg: err.message , title: 'Error' });
   }
 }
 
@@ -70,8 +69,8 @@ async function deleteContact(req, res) {
     firstLetter = contact.firstName.charAt(0).toUpperCase();
     let foundTab = -1;
     tabs.forEach((element) => {
-      const index = element.indexOf(firstLetter, true);
-      if ( index >= 0 ) {
+      const result = element.includes(firstLetter);
+      if ( result ) {
         foundTab = element;
       }
     })

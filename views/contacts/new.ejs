@@ -4,7 +4,8 @@
 
 <div class="tabcontent">
   <h2> <%= title %> </h2>
-  <div id="new-form">
+  <form id="new-form" action="/contacts" method="POST">
+    <div id="new-form">
     <table>
       <tr> <td class="heading"> First Name </td> <td><input class="prompt" type="text" name="firstName" required="true" > </td></tr>
       <tr> <td class="heading"> Last Name  </td> <td><input class="prompt" type="text" name="lastName"  required="true" > </td></tr>
@@ -30,9 +31,8 @@
                    placeholder="Format: 123-456-7890">  </td>
       </tr> 
     </table>
-    <form id="new-form" action="/contacts" method="POST">
       <input class="add" type="submit" value="Add Contact">
-    </form>
   </div>
+</form>
 
 <%- include('../partials/footer') %>
