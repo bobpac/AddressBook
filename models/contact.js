@@ -15,6 +15,11 @@ const noteSchema = new Schema({
 });
 
 const contactSchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
   firstName: {
     type: String,
     required: true

@@ -32,14 +32,14 @@ async function newContact(req, res, next) {
 
 async function edit(req, res, next) {
   const contact = await Contact.findById(req.params.id);
-  res.render('contacts/edit', { title: 'Edit Contact' ,states, contact});
+  res.render('contacts/edit', { title: 'Edit Contact' , contact});
 }
 
 async function getContacts(req, res, next) {
   /* Find all users that begin with the letters given to us */
   let regexp = new RegExp("^[" + req.params.id + "]","i")
   if ( req.user ) {
-    const contacts = await Contact.find({firstName: regexp}).sort({firstName: 1});
+    const contacts = await Contact.find({'firstName': regexp, 'user': req.user._id}).sort({firstName: 1});
     res.render('contacts/showTab', { title: 'Show Contacts (\'' + req.params.id + '\')', contacts });
   } else {
     res.render('contacts/index', { title: 'Welcome to Address Book!' });
@@ -52,6 +52,7 @@ async function show(req, res) {
 }
 
 async function create(req, res) {
+  req.body.user    = req.user._id;
   req.body.zipCode = parseInt(req.body.zipCode)  
   try {
     // Update this line because now we need the _id of the new movie
