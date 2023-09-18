@@ -5,13 +5,12 @@
 <div class="tabcontent">
   <h2> <%= title %> </h2>
   <form id="new-form" action="/contacts" method="POST">
-    <div id="new-form">
     <table>
       <tr> <td class="heading"> First Name </td> <td><input class="prompt" type="text" name="firstName" required="true" > </td></tr>
       <tr> <td class="heading"> Last Name  </td> <td><input class="prompt" type="text" name="lastName"  required="true" > </td></tr>
-      <tr> <td class="heading"> Address1   </td> <td><input class="prompt" type="text" name="address1"  required="true" > </td></tr>
+      <tr> <td class="heading"> Address1   </td> <td><input class="prompt" type="text" name="address1"                  > </td></tr>
       <tr> <td class="heading"> Address2   </td> <td><input class="prompt" type="text" name="address2"                  > </td></tr>
-      <tr> <td class="heading"> City       </td> <td><input class="prompt" type="text" name="city"      required="true" > </td></tr>
+      <tr> <td class="heading"> City       </td> <td><input class="prompt" type="text" name="city"                      > </td></tr>
       <tr> <td class="heading"> State      </td>
         <td>
           <select name="state">
@@ -21,18 +20,19 @@
           </select>
         </td>
       </tr> 
-      <tr> <td class="heading"> Zip Code   </td> 
+      <tr> <td class="heading"> Zip Code >  </td> 
         <td><input class="prompt" type="text" name="zipCode" pattern="\d{5}" title="Format: 01234 (5 digits)">   </td>
       </tr>
       <tr> <td class="heading"> Email      </td> <td><input class="prompt" type="text" name="email">     </td></tr>
       <tr> <td class="heading"> Phone      </td> 
-        <td><input class="prompt" type="text" name="phone" 
-                   pattern="\d{3}-\d{3}-\d{4}" title="Format: 123-456-7890"
-                   placeholder="Format: 123-456-7890">  </td>
+           <td><input class="prompt" type="text" name="phone" 
+                      pattern="\d{3}-\d{3}-\d{4}" title="Format: 123-456-7890"
+                      placeholder="Format: 123-456-7890">  </td>
       </tr> 
     </table>
+    <div id="new-form">
       <input class="add" type="submit" value="Add Contact">
-  </div>
-</form>
-
+    </div>
+  </form>
+</div>
 <%- include('../partials/footer') %>

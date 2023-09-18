@@ -4,37 +4,34 @@
 
 <div class="tabcontent">
   <h2> <%= title %> </h2>
-  <div id="new-form">
-    <form id="new-form" action="/contacts/<%= contact._id %>?_method=PUT" method="POST">
+  <form id="new-form" action="/contacts/<%= contact._id %>?_method=PUT" method="POST">
     <table>
       <tr> <td class="heading"> First Name </td> <td><input class="prompt" type="text" name="firstName" 
-                                                            required="true" value="<%= contact.firstName %>"> </td></tr>
+                                                            required="true" value="<%= contact.firstName %>"> </td></tr>
       <tr> <td class="heading"> Last Name  </td> <td><input class="prompt" type="text" name="lastName"  
                                                             required="true" value="<%= contact.lastName %>"> </td></tr>
       <tr> <td class="heading"> Address1   </td> <td><input class="prompt" type="text" name="address1"  
-                                                            required="true" value="<%= contact.address1 %>"> </td></tr>
+                                                                            value="<%= contact.address1 %>"> </td></tr>
       <tr> <td class="heading"> Address2   </td> <td><input class="prompt" type="text" name="address2"
                                                                             value="<%= contact.address2 %>"> </td></tr>
       <tr> <td class="heading"> City       </td> <td><input class="prompt" type="text" name="city"  
-                                                            required="true" value="<%= contact.city %>">     </td></tr>
+                                                                            value="<%= contact.city %>">     </td></tr>
       <tr> <td class="heading"> State      </td> <td> <input class="prompt" type="text" name="state"
-                                                                            value="<%= contact.state %>">    </td></tr> 
+                                                                              value="<%= contact.state %>">  </td></tr> 
       <tr> <td class="heading"> Zip Code   </td> 
-        <td><input class="prompt" type="text" name="zipCode" value="<%= contact.zipCode %>"
-                   pattern="\d{5}" title="Format: 01234 (5 digits)">   </td>
-      </tr>
-      <tr> <td class="heading"> Email      </td> 
-        <td><input class="prompt" type="text" name="email" value="<%= contact.email %>">   </td></tr>
-      <tr> <td class="heading"> Phone      </td> 
-        <td><input class="prompt" type="text" name="phone" value="<%= contact.phone %>"
-                   pattern="\d{3}-\d{3}-\d{4}" title="Format: 123-456-7890"
-                   placeholder="Format: 123-456-7890">  </td>
-      </tr> 
+           <td><input class="prompt" type="text" name="zipCode" value="<%= contact.zipCode %>"
+                      pattern="\d{5}" title="Format: 01234 (5 digits)">                                      </td></tr>
+      <tr> <td class="heading"> Email </td> 
+           <td><input class="prompt" type="text" name="email" value="<%= contact.email %>">                  </td></tr>
+      <tr> <td class="heading"> Phone </td> 
+           <td><input class="prompt" type="text" name="phone" value="<%= contact.phone %>"
+               pattern="\d{3}-\d{3}-\d{4}" title="Format: 123-456-7890"
+               placeholder="Format: 123-456-7890"> </td></tr> 
     </table>
     <div id="new-form">
       <input class="add" type="submit" value="Save Contact">
     </div>
-    </form>
-  </div>
+  </form>
+</div>
 
 <%- include('../partials/footer') %>

@@ -5,29 +5,29 @@
 <div class="tabcontent">
   <h2> <%= title %> </h2>
   <div id="new-form">
-  <table>
-    <tr> <td class="heading"> First Name </td> <td><%= contact.firstName %></td></tr>
-    <tr> <td class="heading"> Last Name  </td> <td><%= contact.lastName  %></td></tr>
-    <tr> <td class="heading"> Address1   </td> <td><%= contact.address1  %></td></tr>
-    <tr> <td class="heading"> Address2   </td> <td><%= contact.address2  %></td></tr>
-    <tr> <td class="heading"> City       </td> <td><%= contact.city      %></td></tr>
-    <tr> <td class="heading"> State      </td> <td><%= contact.state     %></td></tr>
-    <tr> <td class="heading"> Zip Code   </td> <td><%= contact.zipCode   %></td></tr>
-    <tr> <td class="heading"> Email      </td> <td><%= contact.email     %></td></tr>
-    <tr> <td class="heading"> Phone      </td> <td><%= contact.phone     %></td></tr>
-    <tr> <td><hl></hl></td></tr>
-    <% contact.notes.forEach(function(n) { %>    
-      <form id="new-form" action="/notes/<%= n._id %>?_method=DELETE" method="POST">
-
-        <tr> <td class="heading"> <input class="delete" type="submit" value="Delete Note">  </td> 
-             <td>                           <%= n.note %>                                   </td></tr>
-      </form>
-    <% }); %>   
-    <form id="new-form" action="/contacts/<%= contact._id %>/notes" method="POST">
-      <tr> <td class="heading"> <input class="add"    type="submit" value="Add Note">  </td> 
-           <td>                 <input class="prompt" type="text"    name="note">      </td></tr>
-    </form>     
-  </table>
+    <table>
+      <tr> <td class="heading"> First Name </td> <td><%= contact.firstName %></td></tr>
+      <tr> <td class="heading"> Last Name  </td> <td><%= contact.lastName  %></td></tr>
+      <tr> <td class="heading"> Address1   </td> <td><%= contact.address1  %></td></tr>
+      <tr> <td class="heading"> Address2   </td> <td><%= contact.address2  %></td></tr>
+      <tr> <td class="heading"> City       </td> <td><%= contact.city      %></td></tr>
+      <tr> <td class="heading"> State      </td> <td><%= contact.state     %></td></tr>
+      <tr> <td class="heading"> Zip Code   </td> <td><%= contact.zipCode   %></td></tr>
+      <tr> <td class="heading"> Email      </td> <td><%= contact.email     %></td></tr>
+      <tr> <td class="heading"> Phone      </td> <td><%= contact.phone     %></td></tr>
+      <tr> <td><hl></hl></td></tr>
+      <% contact.notes.forEach(function(n) { %>    
+        <form id="new-form" action="/notes/<%= n._id %>?_method=DELETE" method="POST">
+          <tr> <td class="heading"> <input class="delete" type="submit" value="Delete Note">  </td> 
+               <td>                           <%= n.note %>                                   </td></tr>
+        </form>
+      <% }); %>   
+      <form id="new-form" action="/contacts/<%= contact._id %>/notes" method="POST">
+        <tr> <td class="heading"> <input class="add"    type="submit" value="Add Note">  </td> 
+             <td>                 <input class="prompt" type="text"    name="note">      </td></tr>
+      </form>     
+    </table>
+  </div>  
   <div id="new-form">
     <form action="/contacts/<%= contact._id %>/edit" method="GET">
       <input class="edit" type="submit" size=30 value="Edit Contact">
@@ -35,7 +35,6 @@
     <form action="/contacts/<%= contact._id %>?_method=DELETE" method="POST">
       <input class="delete" type="submit" value="Delete Contact">
     </form>
-  </div>
   </div>
 </div 
 
