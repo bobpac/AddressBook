@@ -44,3 +44,11 @@ Click on a contact to show, edit, or delete it.
 
 ## Trello board (Planning)
 Click [here](https://trello.com/b/vLkt1Klk/addressbook)
+
+## Future Enhancements
+- Allow other contact items to be saved:
+  - Organization/Company
+  - Website
+- 'Show Contact' has google map URL to Address
+- 'Show Contact' has mailto link to email
+- 'Show Contact' has icons for phone/email/address
