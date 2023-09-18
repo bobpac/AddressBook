@@ -27,7 +27,7 @@ async function index(req, res, next) {
 }
 
 async function newContact(req, res, next) {
-  res.render('contacts/new', { title: 'Create New Contact' ,states});
+  res.render('contacts/new', { title: 'Add Contact' ,states});
 }
 
 async function edit(req, res, next) {
