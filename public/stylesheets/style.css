@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: Linen;
+  background-color: whitesmoke;
   margin: 0;
   height: 100vh;
   display: grid;
@@ -17,7 +17,7 @@ body {
 
 body > nav {
   grid-area: nav;
-  background-color: DeepSkyBlue;
+  background-color: #B6D8F2;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -56,10 +56,6 @@ img {
   margin-bottom: 5px;
   font-weight: bold;
   border-radius: 20px;
-}
-
-body > main {
-  overflow-y: scroll;
 }
 
 #new-form {
@@ -118,10 +114,11 @@ td {
 
 /* Style the buttons inside the tab */
 .tab-button {
-  height: 40px;
+  height: 47px;
   width: 60px;
   border-top-right-radius: 50%;
   flex-basis: 51px;
+  background-color: #B6D8F2;
 }
 
 /* Style the tab content */
