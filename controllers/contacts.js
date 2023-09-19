@@ -53,7 +53,6 @@ async function show(req, res) {
 
 async function create(req, res) {
   req.body.user    = req.user._id;
-  req.body.zipCode = parseInt(req.body.zipCode)  
   try {
     // Update this line because now we need the _id of the new movie
     const contact = await Contact.create(req.body);
@@ -89,8 +88,6 @@ async function deleteContact(req, res) {
 }
 
 async function update(req, res) {
-
-  req.body.zipCode = parseInt(req.body.zipCode)  
 
   const contact = await Contact.findById(req.params.id);
   contact.firstName = req.body.firstName;

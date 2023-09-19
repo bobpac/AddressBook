@@ -44,7 +44,7 @@ const contactSchema = new Schema({
     required: true
   },
   zipCode: {
-    type: Number,
+    type: String,
     required: true
   },
   phone: {
