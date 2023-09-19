@@ -39,8 +39,10 @@ Click on a contact to show, edit, or delete it.
 - HTML
 - CSS
 - Mongoose
+- MongoDB
 - Express
-- Node
+- Node.js
+- Google OAuth2.0
 
 ## Trello board (Planning)
 Click [here](https://trello.com/b/vLkt1Klk/addressbook)
