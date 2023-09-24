@@ -7,7 +7,7 @@
 body {
   background-color: whitesmoke;
   margin: 0;
-  height: 100vh;
+  height: 95vh;
   display: grid;
   grid-template-rows: 40px 1fr;
   grid-template-areas: 
@@ -60,7 +60,7 @@ img {
 }
 
 #new-form {
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,7 +75,7 @@ img {
   size: 60;
 }
 .prompt-label {
-  margin-left: 50px;
+  margin-left: 20px;
   font-weight: bold;
 }
 
@@ -118,7 +118,7 @@ td {
   height: 37px;
   width: 40px;
   border-top-right-radius: 50%;
-  flex-basis: 51px;
+  flex-basis: 11px;
   background-color: #B6D8F2;
 }
 
@@ -129,7 +129,7 @@ td {
   float: right;
   padding-top: 0px;
   padding-bottom: 20px;
-  width: 380px;
+  width: 350px;
   border-right: none;
   border-left: solid;
   border-top: solid;
