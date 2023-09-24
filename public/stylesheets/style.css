@@ -21,7 +21,7 @@ body > nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 20px 0 30px;
+  padding: 0 20px 0 20px;
   border-bottom: solid 2px;
 }
 nav > a {
@@ -60,7 +60,7 @@ img {
 }
 
 #new-form {
-  margin-top: 40px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -109,14 +109,14 @@ td {
   box-sizing: content-box;
   margin-right: 20px;
   margin-top: 20px;
-  width: 50px;
+  width: 40px;
   height: 492px;
 }
 
 /* Style the buttons inside the tab */
 .tab-button {
   height: 41px;
-  width: 60px;
+  width: 40px;
   border-top-right-radius: 50%;
   flex-basis: 51px;
   background-color: #B6D8F2;
@@ -128,8 +128,8 @@ td {
   margin-bottom: 20px;
   float: right;
   padding-top: 0px;
-  padding-bottom: 50px;
-  width: 450px;
+  padding-bottom: 20px;
+  width: 400px;
   border-right: none;
   border-left: solid;
   border-top: solid;
