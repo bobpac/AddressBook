@@ -9,7 +9,7 @@ body {
   margin: 0;
   height: 100vh;
   display: grid;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 40px 1fr;
   grid-template-areas: 
     "nav"
     "main"
@@ -110,12 +110,12 @@ td {
   margin-right: 20px;
   margin-top: 20px;
   width: 40px;
-  height: 492px;
+  height: 446px;
 }
 
 /* Style the buttons inside the tab */
 .tab-button {
-  height: 41px;
+  height: 37px;
   width: 40px;
   border-top-right-radius: 50%;
   flex-basis: 51px;
@@ -129,12 +129,12 @@ td {
   float: right;
   padding-top: 0px;
   padding-bottom: 20px;
-  width: 400px;
+  width: 380px;
   border-right: none;
   border-left: solid;
   border-top: solid;
   border-bottom: solid;
-  height: 492px;
+  height: 446px;
   Overflow-y:scroll;
   background-color: white;
 }
