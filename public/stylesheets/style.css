@@ -107,36 +107,54 @@ td {
   background-clip: content-box;
   flex-basis: auto;
   box-sizing: content-box;
-  margin-right: 20px;
-  margin-top: 20px;
-  width: 40px;
-  height: 446px;
+  margin-right: 40px;
+  margin-top: 40px;
+  width: 50px;
+  height: 90%;
 }
 
 /* Style the buttons inside the tab */
 .tab-button {
-  height: 37px;
-  width: 40px;
-  border-top-right-radius: 50%;
-  flex-basis: 11px;
   background-color: #B6D8F2;
+  border: none;
 }
 
+.div-form-tab {
+  margin: auto;
+}
+
+.div-tab {
+  display: flex;
+  flex: 1 1 auto;
+  width: 50px;
+  border-top-right-radius: 80%;
+  background-color: #B6D8F2;
+}
 /* Style the tab content */
 .tabcontent {
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 20px;
   float: right;
   padding-top: 0px;
   padding-bottom: 20px;
-  width: 350px;
+  width: 80%;
   border-right: none;
   border-left: solid;
   border-top: solid;
   border-bottom: solid;
-  height: 446px;
+  height: 90%;
   Overflow-y:scroll;
   background-color: white;
+}
+
+@media (max-width: 450px) {
+  .tabcontent {
+    width: 250px;
+    font-size: 12px;
+  }
+  body {
+    font-size: 12px;
+  }
 }
 
 h2 {
