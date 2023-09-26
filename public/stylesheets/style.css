@@ -1,11 +1,20 @@
 * {
   box-sizing: border-box;
   font-family: Helvetica;
-  color: #424748;
+}
+
+:root {
+  --body-background-color: whitesmoke;
+  --tab-color: #B6D8F2;
+  --nav-color: #B6D8F2;
+  --add-color: lawngreen;
+  --delete-color: lightcoral;
+  --edit-color: #ffff99;
+  --content-color: white;
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: var(--body-background-color);
   margin: 0;
   height: 95vh;
   display: grid;
@@ -17,13 +26,14 @@ body {
 
 body > nav {
   grid-area: nav;
-  background-color: #B6D8F2;
+  background-color: var(--nav-color);
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 0 20px 0 20px;
   border-bottom: solid 2px;
 }
+
 nav > a {
   margin: 20px;
   text-decoration: none;
@@ -38,21 +48,21 @@ img {
 }
 
 .add {
-  background-color: lawngreen;
+  background-color: var(--add-color);
   padding: 3px 13px;
   font-weight: bold;
   border-radius: 20px;
 }
 
 .delete {
-  background-color: lightcoral;
+  background-color: var(--delete-color);
   padding: 3px 6px;
   font-weight: bold;
   border-radius: 20px;
 }
 
 .edit {
-  background-color: #ffff99;
+  background-color: var(--edit-color);
   padding: 3px 14px;
   margin-bottom: 5px;
   font-weight: bold;
@@ -115,7 +125,7 @@ td {
 
 /* Style the buttons inside the tab */
 .tab-button {
-  background-color: #B6D8F2;
+  background-color: var(--tab-color);
   border: none;
 }
 
@@ -128,9 +138,10 @@ td {
   flex: 1 1 auto;
   width: 50px;
   border-top-right-radius: 65%;
-  background-color: #B6D8F2;
+  background-color: var(--tab-color);
   border: solid 1px;
 }
+
 /* Style the tab content */
 .tabcontent {
   margin-top: 40px;
@@ -145,7 +156,7 @@ td {
   border-bottom: solid;
   height: 90%;
   Overflow-y:scroll;
-  background-color: white;
+  background-color: var(--content-color);
 }
 
 @media (max-width: 450px) {
