@@ -127,8 +127,9 @@ td {
   display: flex;
   flex: 1 1 auto;
   width: 50px;
-  border-top-right-radius: 80%;
+  border-top-right-radius: 65%;
   background-color: #B6D8F2;
+  border: solid 1px;
 }
 /* Style the tab content */
 .tabcontent {
