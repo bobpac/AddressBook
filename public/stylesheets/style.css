@@ -159,6 +159,13 @@ td {
   background-color: var(--content-color);
 }
 
+.BookExterior {
+  background-image: url("../images/book.jpg");
+  overflow-y: hidden;
+  font-family: 'Dancing Script', cursive;
+  font-size: 60px;
+}
+
 @media (max-width: 450px) {
   .tabcontent {
     width: 250px;

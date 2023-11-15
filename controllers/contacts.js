@@ -23,7 +23,7 @@ const tabs = [ "AB",  "CD",  "EF",  "GH",
                "QRS", "TU",  "VW",  "XYZ"];
 
 async function index(req, res, next) {
-  res.render('contacts/index', { title: 'Welcome to Address Book!' });
+  res.render('contacts/index', { title: 'Address Book' });
 }
 
 async function newContact(req, res, next) {
