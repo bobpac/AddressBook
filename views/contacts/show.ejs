@@ -3,11 +3,9 @@
 <%- include('../partials/main') %>
 
 <div class="tabcontent">
-  <h2> <%= title %> </h2>
+  <h2> <%= contact.firstName %> <%= contact.lastName %> </h2>
   <div id="new-form">
     <table>
-      <tr> <td class="heading"> First Name </td> <td><%= contact.firstName %></td></tr>
-      <tr> <td class="heading"> Last Name  </td> <td><%= contact.lastName  %></td></tr>
       <tr> <td class="heading"> Address1   </td> <td><%= contact.address1  %></td></tr>
       <tr> <td class="heading"> Address2   </td> <td><%= contact.address2  %></td></tr>
       <tr> <td class="heading"> City       </td> <td><%= contact.city      %></td></tr>
