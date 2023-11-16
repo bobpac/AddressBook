@@ -40,9 +40,9 @@ async function getContacts(req, res, next) {
   let regexp = new RegExp("^[" + req.params.id + "]","i")
   if ( req.user ) {
     const contacts = await Contact.find({'firstName': regexp, 'user': req.user._id}).sort({firstName: 1});
-    res.render('contacts/showTab', { title: 'Show Contacts (\'' + req.params.id + '\')', contacts });
+    res.render('contacts/showTab', { title: req.params.id, contacts });
   } else {
-    res.render('contacts/index', { title: 'Welcome to Address Book!' });
+    res.render('contacts/index', { title: 'Address Book' });
   }
 }
 
@@ -75,11 +75,11 @@ async function deleteContact(req, res) {
       }
     })
     if ( foundTab === -1 ) {
-      res.render('contacts/index', { title: 'Welcome to Address Book!' });
+      res.render('contacts/index', { title: 'Address Book' });
     } else {
       let regexp = new RegExp("^[" + foundTab + "]","i")
       const contacts = await Contact.find({firstName: regexp}).sort({firstName: 1});
-      res.render('contacts/showTab', { title: 'Show Contacts (\'' + foundTab + '\')', contacts });
+      res.render('contacts/showTab', { title: foundTab, contacts });
     }
   } catch (err) {
     // Typically some sort of validation error
