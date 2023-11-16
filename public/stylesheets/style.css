@@ -82,7 +82,6 @@ img {
   border-left: none;
   border-right: none;
   border-bottom: solid;
-  size: 60;
 }
 .prompt-label {
   margin-left: 20px;
@@ -91,7 +90,6 @@ img {
 
 .prompt-submit {
   margin-top: 20px;
-  size: "20";
 }
 
 table {
@@ -166,13 +164,26 @@ td {
   font-size: 60px;
 }
 
-@media (max-width: 450px) {
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
   .tabcontent {
-    width: 250px;
+    width: 75%;
     font-size: 12px;
   }
-  body {
-    font-size: 12px;
+  table {
+    table-layout: fixed;
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+  .BookExterior {
+    font-size: 30px;
+  }
+  td {
+    padding-left: 5px;
+  }
+  .tab-container {
+    margin-right: 10px;
   }
 }
 
